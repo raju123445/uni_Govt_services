@@ -23,9 +23,6 @@ const card = (service) => {
                 </div> 
                   ) : ("")
                 }
-                {/* <div className="card-actions">
-                  <button className="btn btn-primary">{service.action}</button>
-                </div> */}
               </div>
             </div>
           </div>
