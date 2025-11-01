@@ -1,0 +1,24 @@
+import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
+import connection from "./connection.js";
+import loginRoute from "./route/login.js";
+import service_route from "./route/service_route.js";
+const app = express();
+
+dotenv.config();
+
+const port = process.env.PORT || 3001;
+
+app.use(cors());
+app.use(express.json());
+
+connection();
+
+app.use("/api", loginRoute);
+
+app.use("/api", service_route);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

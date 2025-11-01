@@ -1,0 +1,57 @@
+[
+    {
+        "id" : "1",
+        "name" : "Electricity Bill",
+        "note" : "Avial the service of Electeicity bill",
+        "action" : "Pay",
+        "image" : "./bill.png"
+    },
+
+    {
+        "id" : "2",
+        "name" : "Water Bill",
+        "note" : "Avial the service of Electeicity bill",
+        "action" : "Pay",
+        "image" : "./bill.png"
+    },
+
+    {
+        "id" : "3",
+        "name" : "Mobile Recharge",
+        "note" : "Avial the service of Electeicity bill",
+        "action" : "Pay",
+        "image" : "./bill.png"
+    },
+
+    {
+        "id" : "4",
+        "name" : "DTH Recharge",
+        "note" : "Avial the service of Electeicity bill",
+        "action" : "Pay",
+        "image" : "./bill.png"
+    },
+
+    {
+        "id" : "5",
+        "name" : "Income Tax Return",
+        "note" : "Avial the service of Electeicity bill",
+        "action" : "Pay",
+        "image" : "./bill.png"
+    },
+
+    {
+        "id" : "6",
+        "name" : "Electricity Bill",
+        "note" : "Avial the service of Electeicity bill",
+        "action" : "Pay",
+        "image" : "./bill.png"
+    },
+    
+    {
+        "id" : "7",
+        "name" : "Electricity Bill",
+        "note" : "Avial the service of Electeicity bill",
+        "action" : "Pay",
+        "image" : "./bill.png"
+    }
+]
