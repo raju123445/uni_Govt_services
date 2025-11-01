@@ -1,6 +1,6 @@
-import Navbar from './navbar'
-import { useState } from 'react';
 import axios from 'axios';
+import { useState } from 'react';
+import Navbar from './navbar';
 
 const Signup = () => {
   const [formData, setFormData] = useState({

@@ -15,6 +15,10 @@ app.use(express.json());
 
 connection();
 
+app.get("/", (req, res) => {
+  res.send("Backend API is running successfully 🚀");
+});
+
 app.use("/api", loginRoute);
 
 app.use("/api", service_route);
