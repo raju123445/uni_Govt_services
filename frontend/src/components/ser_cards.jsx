@@ -9,11 +9,13 @@ import "./style.css";
 
 const SerCards = () => {
   const [services, setServices] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL 
+
 
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/services");
+        const response = await axios.get(`${API_URL}/services`);
         setServices(response.data);
       } catch(error) {
         console.log(error);

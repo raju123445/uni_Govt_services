@@ -11,11 +11,14 @@ const Login = () => {
     e.preventDefault();
     setError("");
     setSuccess("");
+    const API_URL = import.meta.env.VITE_API_URL 
+    // || "http://localhost:3000/api";
+    // const API_URLs = "http://localhost:3000/api";
 
     console.log('Sending login request for citizen_id:', citizen_id);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/login", {
+      const response = await axios.post(`${API_URL}/login`, {
         citizen_id,
         password, 
       });
