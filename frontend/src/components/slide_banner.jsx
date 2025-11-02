@@ -60,7 +60,7 @@ function SimpleSlider() {
               <img
                 src={service.image}
                 alt={service.name + " illustration"}
-                className="object-contain "
+                className="rounded-xl w-full h-60 object-cover "
                 loading="eager"
               />
             </div>
