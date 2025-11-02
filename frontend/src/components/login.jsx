@@ -9,13 +9,12 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
-    const API_URL = import.meta.env.VITE_API_URL 
-    // || "http://localhost:3000/api";
-    // const API_URLs = "http://localhost:3000/api";
-
-    console.log('Sending login request for citizen_id:', citizen_id);
+  setError("");
+  setSuccess("");
+  // Use Vite env var when available, otherwise fall back to localhost for dev.
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+  console.log('Using API_URL:', API_URL);
+  console.log('Sending login request for citizen_id:', citizen_id);
 
     try {
       const response = await axios.post(`${API_URL}/login`, {
@@ -48,15 +47,20 @@ const Login = () => {
         setError("Invalid Citizen ID or Password. If you haven't registered yet, please sign up first.");
       }
     } catch (err) {
-      if (err.response?.data?.message === "User not found") {
+      // Log the full error for debugging (network/CORS/other issues)
+      console.error('Login request error:', err);
+
+      // If server returned a structured message, show that; otherwise show a helpful message
+      const serverMessage = err.response?.data?.message || err.response?.data;
+      if (serverMessage === "User not found") {
         setError("This Citizen ID is not registered. Please check your ID or sign up for a new account.");
+      } else if (serverMessage) {
+        setError(String(serverMessage));
+      } else if (err.message) {
+        // This will include network errors and CORS errors
+        setError(err.message);
       } else {
-        setError(
-          err.response?.data?.message || 
-          err.response?.data || 
-          err.message || 
-          "An error occurred. Please try again."
-        );
+        setError("Network Error: could not reach the server. Please check your backend and CORS settings.");
       }
     }
   };
