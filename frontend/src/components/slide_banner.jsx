@@ -13,6 +13,9 @@ function SimpleSlider() {
 
   const [services, setServices] = useState([]);
   const API_URL = import.meta.env.VITE_API_URL;
+  
+  // const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 
   useEffect(() => {
     const fetchServices = async () => {
