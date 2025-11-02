@@ -30,6 +30,10 @@ app.get("/", (req, res) => {
   res.send("Backend API is running successfully 🚀");
 });
 
+app.get("/login", (req, res) => {
+  res.send("This is login🚀");
+});
+
 app.use("/api", loginRoute);
 
 app.use("/api", service_route);
