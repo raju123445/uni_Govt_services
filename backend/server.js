@@ -14,7 +14,7 @@ const port = process.env.PORT || 3001;
 const allowedOrigins = [
   "http://localhost:3000",
   "https://uni-govt-services.vercel.app",
-  "http://localhost:5173/",
+  "http://localhost:5173",
 ];
 
 app.use(cors({
